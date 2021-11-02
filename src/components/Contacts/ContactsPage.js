@@ -24,7 +24,7 @@ const ContactsPage = ({ contactsData, filter }) => {
 
   const slice = contactsData.slice(0, dataToShow);
   //**************************************************** */
-
+  //fgfgg
   //Filtering Functions
   function genderCheck(gFilter, person) {
     let personGender = forFirstCharUppercase(person.gender);
