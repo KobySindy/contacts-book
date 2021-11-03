@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   },
 });
 
-const ContactCard = ({ person }) => {
+function ContactCard({ person }) {
   const classes = useStyles();
   const { gender, name, email, phone, picture } = person;
   let { thumbnail } = picture;
@@ -65,6 +65,6 @@ const ContactCard = ({ person }) => {
       </Card>
     </Grid>
   );
-};
+}
 
 export default ContactCard;
