@@ -35,8 +35,9 @@ const ContactsPage = ({ contactsData, filter }) => {
   }
   function nameCheck(nFilter, person) {
     let personName = forFirstCharUppercase(person.name.first);
-
-    return personName.includes(nFilter);
+    if (personName == "") {
+      return true;
+    } else return personName.includes(nFilter);
   }
 
   //Load more Function
@@ -57,7 +58,7 @@ const ContactsPage = ({ contactsData, filter }) => {
         )}
       </Grid>
       <div className={classes.buttonsContainer}>
-        <Button onClick={() => loadMore()} variant='contained'>
+        <Button onClick={loadMore} variant='contained'>
           Load More
         </Button>
       </div>
