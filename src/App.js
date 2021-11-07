@@ -5,12 +5,11 @@ import ContactsPage from "./components/Contacts/ContactsPage";
 import { getContactsList } from "./Helpers";
 
 function App() {
+  const [contactsData, setContactsData] = useState([]);
   const [filter, setFilter] = useState({
     nameFilter: "",
     genderFilter: "All Genders",
   });
-
-  const [contactsData, setContactsData] = useState([]);
 
   useEffect(() => {
     getContactsList((data) => {

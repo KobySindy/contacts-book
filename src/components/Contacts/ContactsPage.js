@@ -28,7 +28,7 @@ const ContactsPage = ({ contactsData, filter }) => {
   function genderCheck(gFilter, person) {
     let personGender = forFirstCharUppercase(person.gender);
     if (gFilter == "All Genders") {
-      return true;
+      return person;
     } else {
       return personGender.includes(gFilter);
     }
@@ -53,7 +53,7 @@ const ContactsPage = ({ contactsData, filter }) => {
           (person) =>
             genderCheck(filter.genderFilter, person) &&
             nameCheck(filter.nameFilter, person) && (
-              <ContactCard person={person} />
+              <ContactCard filter={filter} person={person} />
             )
         )}
       </Grid>

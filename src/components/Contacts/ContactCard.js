@@ -28,9 +28,12 @@ const useStyles = makeStyles({
     paddingLeft: " 1rem",
     paddingRight: " 1rem",
   },
+  cardFocus: {
+    backgroundColor: "yellow",
+  },
 });
 
-function ContactCard({ person }) {
+function ContactCard({ filter, person }) {
   const classes = useStyles();
   const { gender, name, email, phone, picture } = person;
   let { thumbnail } = picture;
@@ -47,7 +50,7 @@ function ContactCard({ person }) {
     <Grid item xs={4} key={phone}>
       <Card className={classes.card}>
         <CardMedia className={classes.cardMedia} image={thumbnail}></CardMedia>
-        <CardContent>
+        <CardContent className={filter.nameFilter ? classes.cardFocus : ""}>
           <Typography className={classes.typographyStyle}>
             {`${forFirstCharUppercase(name.first)} ${forFirstCharUppercase(
               name.last

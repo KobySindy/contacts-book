@@ -17,6 +17,10 @@ const useStyles = makeStyles({
   searchBox: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "space-between",
+    background: "rgba(255,255,255,0.3)",
+    borderRadius: "7px",
+    width: "50%",
   },
 });
 
@@ -35,11 +39,11 @@ const TopBar = ({ filter, setFilter }) => {
         <Toolbar className={classes.toolBar}>
           <MenuItem style={{ fontSize: "1.5rem" }}>Contacts Book</MenuItem>
           <div className={classes.searchBox}>
-            <SearchIcon />
             <TextField
               label='Search'
               variant='standard'
               onChange={handleSearchChange}></TextField>
+            <SearchIcon />
           </div>
           <Select
             value={filter.genderFilter}
