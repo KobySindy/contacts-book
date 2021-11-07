@@ -10,7 +10,7 @@ import { forFirstCharUppercase } from "../../Helpers";
 //Generate Classes for Style
 const useStyles = makeStyles({
   card: {
-    minWidth: "300px",
+    minWidth: "310px",
   },
   contactsContainer: {
     padding: "20px 50px 0 50px",
@@ -25,8 +25,8 @@ const useStyles = makeStyles({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    paddingLeft: " 1rem",
-    paddingRight: " 1rem",
+    paddingLeft: " 0.5rem",
+    paddingRight: " 0.5rem",
   },
   cardFocus: {
     backgroundColor: "yellow",
@@ -47,7 +47,7 @@ function ContactCard({ filter, person }) {
   }
 
   return (
-    <Grid item xs={4} key={phone}>
+    <Grid item xs={12} sm={6} md={4} key={phone}>
       <Card className={classes.card}>
         <CardMedia className={classes.cardMedia} image={thumbnail}></CardMedia>
         <CardContent className={filter.nameFilter ? classes.cardFocus : ""}>
