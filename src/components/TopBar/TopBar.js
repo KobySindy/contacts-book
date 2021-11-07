@@ -20,7 +20,11 @@ const useStyles = makeStyles({
     justifyContent: "space-between",
     background: "rgba(255,255,255,0.3)",
     borderRadius: "7px",
-    width: "50%",
+    width: "30%",
+  },
+  genderSelect: {
+    color: "white",
+    backgroundColor: "rgba(255,255,255,0.3)",
   },
 });
 
@@ -46,12 +50,17 @@ const TopBar = ({ filter, setFilter }) => {
             <SearchIcon />
           </div>
           <Select
+            className={classes.genderSelect}
             value={filter.genderFilter}
             onChange={handleGenderChange}
             displayEmpty>
             <MenuItem value={"All Genders"}>All Genders</MenuItem>
-            <MenuItem value={"Female"}>Female</MenuItem>
-            <MenuItem value={"Male"}>Male</MenuItem>
+            <MenuItem className={classes.genderSelect} value={"Female"}>
+              Female
+            </MenuItem>
+            <MenuItem className={classes.genderSelect} value={"Male"}>
+              Male
+            </MenuItem>
           </Select>
         </Toolbar>
       </AppBar>
