@@ -27,7 +27,7 @@ const ContactsPage = ({ contactsData, filter }) => {
   //Filtering Functions
   function genderCheck(gFilter, person) {
     let personGender = forFirstCharUppercase(person.gender);
-    if (gFilter == "All Genders") {
+    if (gFilter === "All Genders") {
       return person;
     } else {
       return personGender.includes(gFilter);
@@ -35,7 +35,7 @@ const ContactsPage = ({ contactsData, filter }) => {
   }
   function nameCheck(nFilter, person) {
     let personName = forFirstCharUppercase(person.name.first);
-    if (personName == "") {
+    if (personName === "") {
       return true;
     } else return personName.includes(nFilter);
   }
