@@ -40,7 +40,7 @@ function ContactCard({ filter, person }) {
 
   //For Gender Icon
   let genderIcon;
-  if (gender == "male") {
+  if (gender === "male") {
     genderIcon = <MaleIcon />;
   } else {
     genderIcon = <FemaleIcon />;
